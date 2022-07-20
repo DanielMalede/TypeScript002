@@ -1,110 +1,110 @@
 
 
-//דוגמאות
-//אם יוצרים אררגומנט אופציונלי חייבים לספק תנאי אי אפשר להישען עליו בקוד שלנו
+// דוגמאות
+// אם יוצרים אררגומנט אופציונלי חייבים לספק תנאי אי אפשר להישען עליו בקוד שלנו
 
 
 
-// //ערך דיפולטיבי , אם אני לא מספר פרמטר בקריאה לפונקציה היא תספק לי את מה ששמתי כארגומנט בהגדרות של הפונקציה
-// function getDetails(fName:string="firstName",age:number=18):string{
-// return `${fName} ${age}`
-// }
-// console.log(getDetails());
-
-// function sum(...restOfNum:number[]):number{
-//   let result:number=0
-//   restOfNum.forEach((item)=>{
-//     result+=item;
-//   })
-// return result;
-// }
-// console.log(sum(5,56,6,4,5,345,23,345,3));
-
-
-
-
-// 21.
-
-// function getName(firstName1:string,lastName?:string):void{
-//   lastName?console.log(firstName1+lastName):console.log(firstName1);
-// }
-// getName("Lior");
-
-
-// 22.
-// function printToLog(fullName:string,email?:any):void{
-//   email?console.log(fullName+email):console.log(fullName);
-// }
-// printToLog("lior dawit");
-
-// 23.
-
-// function getNamesAndPrint(ageCat:number,typeCat:string,catName?:string):void{
-//   catName ? console.log(catName + ageCat + typeCat : console.log(ageCat+typeCat))
-// }
-// getNamesAndPrint( 12," street");
-
-// 24.
-// function getSomeParaAndReturn(text:string,booleanArgu:boolean=false):string{
-// if(booleanArgu === true){
-//   return `Hello ${text}`;
-// }
-// else{
-//   return `Welcome${text}`;
-// }
-// }
-// console.log(getSomeParaAndReturn("lior dawit"));
-
-// 25.
-
-// function getSomeNamesAndReturn(firstName1:string,lastName1:string,missText:string=" miss "):string{
-// return firstName1 + lastName1 + missText;
-// }
-// console.log(getSomeNamesAndReturn(" lior"," dawit"));
-
-// //NOT FINISH
-// 26.
-// function printTheTextNumTimesAsArgument(someText:string,defaultNum:number=1,textOpzional?:string):void{
-// for(let i = 0 ; i<defaultNum;i++){
-//   !textOpzional?console.log(someText):console.log(`${someText}${textOpzional}`);
-// }
-// printTheTextNumTimesAsArgument("king lior",5);
-
-
-// }
-
-// 27.
-// function getNumberAndSort(...caractors:string=[]):void{
-
-// }
-// getNumberAndSort()
-
-
-// function calac(num1?:number,):number{
-//   return num1? num1 +5 : 0 ;
-// }
-// calac(6)//11
-
-class Cat {
-  nameofcat: string;
-  age: number;
-  color: string;
-  private ownerName: string;
-  constructor(name_of_cat: string, age: number, color: string) {
-    this.nameofcat = name_of_cat;
-    this.age = age;
-    this.color = color;
-  }
-  get getOwnerName(): string {
-    return this.ownerName;
-  }
-  set setOwnerName(name: string) {
-    name.length < 5 ? this.ownerName = name : console.log("need at list 5 letters");
-
-  }
+//ערך דיפולטיבי , אם אני לא מספר פרמטר בקריאה לפונקציה היא תספק לי את מה ששמתי כארגומנט בהגדרות של הפונקציה
+function getDetails(fName:string="firstName",age:number=18):string{
+return `${fName} ${age}`
 }
-let newCatObject: Cat = new Cat("sama", 12, "blacl");
-console.log(newCatObject);
+console.log(getDetails());
+
+function sum(...restOfNum:number[]):number{
+  let result:number=0
+  restOfNum.forEach((item)=>{
+    result+=item;
+  })
+return result;
+}
+console.log(sum(5,56,6,4,5,345,23,345,3));
+
+
+
+
+21.
+
+function getName(firstName1:string,lastName?:string):void{
+  lastName?console.log(firstName1+lastName):console.log(firstName1);
+}
+getName("Lior");
+
+
+22.
+function printToLog(fullName:string,email?:any):void{
+  email?console.log(fullName+email):console.log(fullName);
+}
+printToLog("lior dawit");
+
+23.
+
+function getNamesAndPrint(ageCat:number,typeCat:string,catName?:string):void{
+  catName ? console.log(catName + ageCat + typeCat : console.log(ageCat+typeCat))
+}
+getNamesAndPrint( 12," street");
+
+24.
+function getSomeParaAndReturn(text:string,booleanArgu:boolean=false):string{
+if(booleanArgu === true){
+  return `Hello ${text}`;
+}
+else{
+  return `Welcome${text}`;
+}
+}
+console.log(getSomeParaAndReturn("lior dawit"));
+
+25.
+
+function getSomeNamesAndReturn(firstName1:string,lastName1:string,missText:string=" miss "):string{
+return firstName1 + lastName1 + missText;
+}
+console.log(getSomeNamesAndReturn(" lior"," dawit"));
+
+//NOT FINISH
+26.
+function printTheTextNumTimesAsArgument(someText:string,defaultNum:number=1,textOpzional?:string):void{
+for(let i = 0 ; i<defaultNum;i++){
+  !textOpzional?console.log(someText):console.log(`${someText}${textOpzional}`);
+}
+printTheTextNumTimesAsArgument("king lior",5);
+
+
+}
+
+27.
+function getNumberAndSort(...caractors:string=[]):void{
+
+}
+getNumberAndSort()
+
+
+function calac(num1?:number,):number{
+  return num1? num1 +5 : 0 ;
+}
+calac(6)//11
+
+// class Cat {
+//   nameofcat: string;
+//   age: number;
+//   color: string;
+//   private ownerName: string;
+//   constructor(name_of_cat: string, age: number, color: string) {
+//     this.nameofcat = name_of_cat;
+//     this.age = age;
+//     this.color = color;
+//   }
+//   get getOwnerName(): string {
+//     return this.ownerName;
+//   }
+//   set setOwnerName(name: string) {
+//     name.length < 5 ? this.ownerName = name : console.log("need at list 5 letters");
+
+//   }
+// }
+// let newCatObject: Cat = new Cat("sama", 12, "blacl");
+// console.log(newCatObject);
 
 
 // class Cat{
@@ -315,7 +315,7 @@ let some22 = new Kitchen(33,4,3);
 let some33 = new Kitchen(33,4,3);
 let some44 = new Kitchen(33,4,3);
 
-console.log(Room.returnTheBiggestRoom(some11,some22,some33,some44))
+console.log(Room.returnTheBiggestRoom("big",some11,some22,some33,some44))
 
 
 43.
