@@ -1,3 +1,5 @@
+
+
 //דוגמאות
 //אם יוצרים אררגומנט אופציונלי חייבים לספק תנאי אי אפשר להישען עליו בקוד שלנו
 
@@ -232,7 +234,7 @@ class User {
 let user33 = new User("lior dawit",34,"lllllll");
 let user44 = new User("cristiano ronaldo",11,"aaaaaaa");
 console.log(User.getSomeObjectsAndPrint(user33,2))
-
+40.
 class Student extends User{
   firstName:string;
   lastName:string;
@@ -263,7 +265,7 @@ let some5 = new Student("ali","dawi","28/03/1997","dawitlior777@gmail.com",22,"s
 let some6 = new Student("naor","dait","28/03/1997","dawitlior777@gmail.com",24,"ssdsdds")
 
 console.log(Student.getSomeObjectsAndPrint("older",some3,some4,some5,some6));
-
+41.
 class Room{
   wight:number;
   higth:number;
@@ -293,7 +295,7 @@ class Room{
     return;
   }
 }
-
+42.
 class Kitchen extends Room{
   numberClosets:number;
   constructor(wight:number,higth:number,numberClosets:number){
@@ -313,4 +315,25 @@ let some22 = new Kitchen(33,4,3);
 let some33 = new Kitchen(33,4,3);
 let some44 = new Kitchen(33,4,3);
 
-console.log(Room.returnTheBiggestRoom("big",some11,some22,some33,some44));
+console.log(Room.returnTheBiggestRoom(some11,some22,some33,some44))
+
+
+43.
+class Salon extends Room{
+    setsNumber:number;
+    airFlow:string;
+    constructor(wight:number,hight:number,area:number,setsNumber:number,airFlow:string){
+      super(wight,hight,area)
+      this.setsNumber=setsNumber;
+      this.airFlow=airFlow;
+    }
+    returnAllDetailsSalon(){
+      console.log(`${super.getDetails} Number Of Sets:${this.setsNumber}Air-Flow${this.airFlow}`);
+    }
+    returnIfHadAirFlow():string{
+      return this.isHaveWindow ? `windows air flow${this.airFlow}`: `no have windows poor family`
+    }
+
+}
+
+44.
