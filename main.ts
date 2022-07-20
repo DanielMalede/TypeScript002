@@ -337,3 +337,88 @@ class Salon extends Room{
 }
 
 44.
+ class Product{
+   wight:number;
+   hight:number;
+   kg:number;
+   price:number;
+   private isHaveInvations:boolean=false;
+   constructor(wight:number,hight:number,kg:number,price:number){
+     this.wight = wight;
+     this.hight = hight;
+     this.kg = kg;
+     this.price = price;
+   }
+
+   getDetails(){
+     return `Details:${this.wight}${this.hight}${this.kg}${this.price}`;
+   }
+
+   get getIsHaveInvations():boolean{
+     return this.isHaveInvations;
+   }
+   set setIsHaveInvations(someBool:boolean){
+     this.isHaveInvations = someBool;
+   }
+
+   static returnExpansiveOrChip(expensiveOrChip:string="expansive",...prodoctObj:Product[]){
+     if(expensiveOrChip === "expansive"){
+       prodoctObj.sort((a:Product,b:Product)=> b.price - a.price)[0]
+     }
+     else if(expensiveOrChip === "chip"){
+       prodoctObj.sort((a:Product,b:Product)=>b.price - a.price)[0]
+     }
+   }
+ }
+
+ 45.
+  class Computer extends Product{
+   energyPower:number;
+   constructor(wight:number,hight:number,kg:number,price:number,energyPower:number){
+     super(wight,hight,kg,price);
+     this.energyPower = energyPower;
+   }
+   getComputerDetails(){
+     return `Details:${this.getDetails()} Energy-Power:${this.energyPower}`;
+   }
+   getMessegeInvation(){
+     return this.getIsHaveInvations ? "invaited" : "need to complite invation";
+   }
+ }
+
+let computer1 = new Computer(34,55,87,1400,10);
+let computer2 = new Computer(33,54,80,1250,21);
+let computer3 = new Computer(35,56,85,1700,30);
+let computer4 = new Computer(31,59,90,2390,60);
+Computer.returnExpansiveOrChip("expensive",computer1,computer2,computer3,computer4);
+
+46.
+class ComputerScreen extends Product{
+   numberInvations:number;
+   resolution:number;
+   constructor(wight:number,hight:number,kg:number,price:number,numberInvations:number,resolution:number){
+     super(wight,hight,kg,price);
+     this.numberInvations = numberInvations;
+     this.resolution = resolution;
+   }
+   printAllDetails(){
+     return `Details:${this.getDetails} Number Of Invations:${this.numberInvations} Resolution :${this.resolution}`;
+   }
+
+   getMessegeAndPrintByInva(){
+     return this.getIsHaveInvations ? `${this.numberInvations} is alredy send to the coustimer`:"U need to oeder";
+   }
+}
+
+const show1 = new User("elada barahano",23,"eldadQewr");
+const show2 = new User("lior dawit",26,"liorQewr");
+show1
+class Dog {
+  static numberOfObjects: number = 0;
+  constructor() {
+    Dog.addOneDogObject
+  }
+  static addOneDogObject() {
+    Dog.numberOfObjects++;
+  }
+}
