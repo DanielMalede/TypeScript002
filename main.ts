@@ -329,11 +329,12 @@ console.log(Room.returnTheBiggestRoom("small",some11,some22,some33,some44))
 
 
 43.
+
 class Salon extends Room{
     setsNumber:number;
     airFlow:string;
-    constructor(wight:number,hight:number,area:number,setsNumber:number,airFlow:string){
-      super(wight,hight,area)
+    constructor(wight:number,hight:number,area:number,isWindow:boolean,setsNumber:number,airFlow:string){
+      super(wight,hight,area,isWindow)
       this.setsNumber=setsNumber;
       this.airFlow=airFlow;
     }
@@ -343,8 +344,8 @@ class Salon extends Room{
     returnIfHadAirFlow():string{
       return this.isHaveWindow ? `windows air flow${this.airFlow}`: `no have windows poor family`
     }
-
 }
+
 
 44.
  class Product{
