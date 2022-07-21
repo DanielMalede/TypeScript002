@@ -210,10 +210,11 @@ class User {
   age: number;
   password: string;
   private isConnect:boolean = false;
-  constructor(fullName: string, age: number, password: string) {
+  constructor(fullName: string, age: number, password: string,isConnect:boolean) {
     this.fullName = fullName;
     this.age = age;
     this.password = password;
+    this.isConnect=isConnect;
   }
   get getConnectUser(){
     return this.isConnect
@@ -223,18 +224,19 @@ class User {
   }
 
   static getSomeObjectsAndPrint(olderOrYounger:string,...numsOfUsers:User[]){
-    if(olderOrYounger === "young"){
+    if(olderOrYounger === "older"){
       return numsOfUsers.sort((a:User,b:User)=> b.age-a.age)[0];
     }
-    else if(olderOrYounger==="older"){
+    else if(olderOrYounger==="young"){
       return numsOfUsers.sort((a:User,b:User)=>a.age-b.age)[0];
     }
     return;
   }
 }
-let user33 = new User("lior dawit",34,"lllllll");
-let user44 = new User("cristiano ronaldo",11,"aaaaaaa");
-console.log(User.getSomeObjectsAndPrint(user33,2))
+let user33 = new User("lior dawit",34,"lllllll",false);
+let user44 = new User("cristiano ronaldo",11,"aaaaaaa",true);
+console.log(User.getSomeObjectsAndPrint("young",user33,user44))
+
 40.
 class Student extends User{
   firstName:string;
@@ -272,13 +274,14 @@ class Room{
   higth:number;
   area:number;
   private isWindow:boolean=false;
-  constructor(wight:number,higth:number,area:number){
+  constructor(wight:number,higth:number,area:number,isWindow:boolean){
     this.wight=wight;
     this.higth=higth;
-    this.area=this.higth*this.wight;
+    this.area=wight*higth; 
+    this.isWindow=isWindow
   }
   getDetails():string{
-    return `Details:${this.wight},${this.higth},${this.area} There is window?${this.isWindow}`;
+    return `Details:${this.area} There is window?${this.isWindow}`;
   }
   get isHaveWindow():boolean{
     return this.isWindow;
@@ -288,19 +291,24 @@ class Room{
   }
   static returnTheBiggestRoom(bigOrSmall:string,...roomsObj:Room[]){
     if(bigOrSmall === "small"){
-      roomsObj.sort((a:Room,b:Room)=> b.area - a.area)[0]
+     return roomsObj.sort((a:Room,b:Room)=> a.area - b.area)[0]
     }
     else if(bigOrSmall === "big"){
-      roomsObj.sort((a:Room,b:Room)=> b.area - a.area)[0]
+      return roomsObj.sort((a:Room,b:Room)=> b.area - a.area)[0]
     }
     return;
   }
 }
+
+let show11 = new Room(10,20,200,false)
+let show22 = new Room(180,200,36000,true)
+console.log(Room.returnTheBiggestRoom("small",show11,show22))
+
 42.
 class Kitchen extends Room{
   numberClosets:number;
-  constructor(wight:number,higth:number,numberClosets:number){
-    super(wight,higth);
+  constructor(wight:number,higth:number,area:number,isWindow:boolean,numberClosets:number){
+    super(wight,higth,area,isWindow);
     this.numberClosets=numberClosets;
   }
   printDetails():string{
@@ -311,12 +319,13 @@ class Kitchen extends Room{
   }
 }
 
-let some11 = new Kitchen(12,44,2);
-let some22 = new Kitchen(33,4,3);
-let some33 = new Kitchen(33,4,3);
-let some44 = new Kitchen(33,4,3);
+let some11 = new Kitchen(12,44,2,false,2);
+let some22 = new Kitchen(33,2,3,true,3);
+let some33 = new Kitchen(12,1,3,false,4);
+let some44 = new Kitchen(25,1,3,true,5);
 
-console.log(Room.returnTheBiggestRoom("big",some11,some22,some33,some44))
+console.log(Room.returnTheBiggestRoom("small",some11,some22,some33,some44))
+
 
 
 43.
