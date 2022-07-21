@@ -144,7 +144,7 @@ class Elepant {
     this.age = age;
     this.country = country;
   }
-  get returnNames() {
+   returnNames() {
     return `${this.hight}${this.kindOf}${this.age}${this.country}`
   }
 }
@@ -162,12 +162,13 @@ class Pants {
     this.hight = hight;
     this.isExist = isExist;
   }
-  private returnAllDetails() {
+   returnAllDetails() {
     return `Details:${this.size}${this.color}${this.fabricType}${this.hight}${this.isExist}`;
   }
   get anotherFunction() {
     return this.returnAllDetails
   }
+
 
 }
 let some1: Pants = new Pants(12, "blackk", "xcv", 33, false)
@@ -184,7 +185,7 @@ class Sportsman {
     this.sportType = sportType;
     this.gender = gender ? this.gender : ""
   }
-  protected someReturnFunction() {
+   someReturnFunction() {
     return `Details: ${this.fullName}${this.birthDay}${this.sportType}${this.gender}`
   }
 }
@@ -248,7 +249,7 @@ class Student extends User{
     this.email=`${this.firstName}${this.lastName}@walla.com`;
   }
 
-  get printAllDetails(){
+   printAllDetails(){
     return `Details: ${this.firstName},${this.lastName},${this.birthOfData},${this.email},${this.password}`
   }
 
