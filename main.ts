@@ -278,7 +278,7 @@ class Room{
     this.area=this.higth*this.wight;
   }
   getDetails():string{
-    return `Details:${this.wight},${this.higth},${this.area} There is window${this.isWindow}`;
+    return `Details:${this.wight},${this.higth},${this.area} There is window?${this.isWindow}`;
   }
   get isHaveWindow():boolean{
     return this.isWindow;
