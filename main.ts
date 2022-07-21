@@ -274,11 +274,10 @@ class Room{
   higth:number;
   area:number;
   private isWindow:boolean=false;
-  constructor(wight:number,higth:number,area:number,isWindow:boolean){
+  constructor(wight:number,higth:number,area:number){
     this.wight=wight;
     this.higth=higth;
     this.area=wight*higth; 
-    this.isWindow=isWindow
   }
   getDetails():string{
     return `Details:${this.area} There is window?${this.isWindow}`;
@@ -300,15 +299,15 @@ class Room{
   }
 }
 
-let show11 = new Room(10,20,200,false)
-let show22 = new Room(180,200,36000,true)
+let show11 = new Room(10,20,200)
+let show22 = new Room(180,200,36000)
 console.log(Room.returnTheBiggestRoom("small",show11,show22))
 
 42.
 class Kitchen extends Room{
   numberClosets:number;
-  constructor(wight:number,higth:number,area:number,isWindow:boolean,numberClosets:number){
-    super(wight,higth,area,isWindow);
+  constructor(wight:number,higth:number,area:number,numberClosets:number){
+    super(wight,higth,area);
     this.numberClosets=numberClosets;
   }
   printDetails():string{
@@ -319,10 +318,10 @@ class Kitchen extends Room{
   }
 }
 
-let some11 = new Kitchen(12,44,2,false,2);
-let some22 = new Kitchen(33,2,3,true,3);
-let some33 = new Kitchen(12,1,3,false,4);
-let some44 = new Kitchen(25,1,3,true,5);
+let some11 = new Kitchen(12,44,2,2);
+let some22 = new Kitchen(33,2,3,3);
+let some33 = new Kitchen(12,1,3,4);
+let some44 = new Kitchen(25,1,3,5);
 
 console.log(Room.returnTheBiggestRoom("small",some11,some22,some33,some44))
 
