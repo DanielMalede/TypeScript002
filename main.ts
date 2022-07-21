@@ -318,10 +318,10 @@ class Kitchen extends Room{
   }
 }
 
-let some11 = new Kitchen(12,44,2,2);
-let some22 = new Kitchen(33,2,3,3);
-let some33 = new Kitchen(12,1,3,4);
-let some44 = new Kitchen(25,1,3,5);
+let some11:Kitchen = new Kitchen(12,44,2,2);
+let some22:Kitchen = new Kitchen(33,2,3,3);
+let some33:Kitchen = new Kitchen(12,1,3,4);
+let some44:Kitchen = new Kitchen(25,1,3,5);
 
 console.log(Room.returnTheBiggestRoom("small",some11,some22,some33,some44))
 
@@ -396,10 +396,10 @@ class Salon extends Room{
    }
  }
 
-let computer1 = new Computer(34,55,87,1400,10);
-let computer2 = new Computer(33,54,80,1250,21);
-let computer3 = new Computer(35,56,85,1700,30);
-let computer4 = new Computer(31,59,90,2390,60);
+let computer1:Computer = new Computer(34,55,87,1400,10);
+let computer2:Computer = new Computer(33,54,80,1250,21);
+let computer3:Computer = new Computer(35,56,85,1700,30);
+let computer4:Computer = new Computer(31,59,90,2390,60);
 Computer.returnExpansiveOrChip("expensive",computer1,computer2,computer3,computer4);
 
 46.
