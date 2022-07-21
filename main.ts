@@ -420,6 +420,70 @@ class ComputerScreen extends Product{
    }
 }
 
+47.
+class Factory{
+  name:string;
+  city:string;
+  numberEmpoliyes:number;
+  isHaveConfirmation:boolean;
+  private isHaveOtomation:boolean = true;
+  constructor(name:string,city:string,numberEmpoliyes:number,isHaveConfirmation:boolean){
+    this.name=name;
+    this.city=city;
+    this.numberEmpoliyes=numberEmpoliyes;
+    this.isHaveConfirmation=isHaveConfirmation;
+  }
+  printDetails(){
+    return `Details:Name:${this.name}City:${this.city}Number-Empoliyes:${this.numberEmpoliyes}Is Have Confirmation:${this.isHaveConfirmation}`;
+  }
+  get getIsHaveOtomation():boolean{
+    return this.isHaveOtomation
+  }
+  set setIsHaveOtomation(someBoolean:boolean){
+    this.isHaveOtomation = someBoolean
+  }
+
+  static returnWhereHadMaxOfEmpoliyes(moreOrLess:string="going up",...factoryObj:Factory[]){
+    if(moreOrLess === "goingup"){
+     return factoryObj.sort((a:Factory,b:Factory)=> b.numberEmpoliyes - a.numberEmpoliyes)[0];
+    }
+    else if(moreOrLess === "goingdown"){
+     return factoryObj.sort((a:Factory,b:Factory)=>a.numberEmpoliyes -b.numberEmpoliyes)[0];
+    }
+    return "first operator must be : goingup or goingdown";
+  }
+}
+let somer1:Factory = new Factory("coca-cola","rishon-ltzion",60,true);
+let somer2:Factory = new Factory("some1","eilat",40,false);
+let somer3:Factory = new Factory("some3","kiryat-malachi",10,false);
+// console.log(Factory.returnWhereHadMaxOfEmpoliyes("goingdown",somer1,somer2,somer3));
+
+48.
+class Warehouse extends Factory{
+  numberOfTelevition:number;
+  constructor(name:string,city:string,numberEmpoliyes:number,isHaveConfirmation:boolean,numberOfTelevition:number){
+    super(name,city,numberEmpoliyes,isHaveConfirmation)
+    this.numberOfTelevition=numberOfTelevition;
+  }
+  printTheDetails(){
+    return `Details:${this.printDetails()} Number Of Televition:${this.numberOfTelevition}`
+  }
+
+  getConfirmMessege(){
+    return this.getIsHaveOtomation ? "Approved" : "An application has been submitted"ף
+  }
+}
+
+let b123:Warehouse = new Warehouse("amit","kiryat-malachi",53,false,7)
+let b124:Warehouse = new Warehouse("amal","kiryat-malachi",48,true,4)
+let b125:Warehouse = new Warehouse("school1","beer-sheva",43,true,11)
+let b126:Warehouse = new Warehouse("eilat23","Tel-aviv",60,true,67)
+console.log(Warehouse.returnWhereHadMaxOfEmpoliyes("goingdown",b123,b124,b125,b126));
+
+
+
+
+
 const show1 = new User("elada barahano",23,"eldadQewr");
 const show2 = new User("lior dawit",26,"liorQewr");
 show1
