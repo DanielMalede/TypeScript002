@@ -480,6 +480,31 @@ let b125:Warehouse = new Warehouse("school1","beer-sheva",43,true,11)
 let b126:Warehouse = new Warehouse("eilat23","Tel-aviv",60,true,67)
 console.log(Warehouse.returnWhereHadMaxOfEmpoliyes("goingdown",b123,b124,b125,b126));
 
+49.
+class Sandwich extends Product{
+  name:string;
+  city:string;
+  numberEmpoliyes:number;
+  isHaveConfirm:boolean;
+  isThereKosherFood:boolean;
+  constructor(wight:number,hight:number,kg:number,price:number,name:string,city:string,numberEmpoliyes:number,isHaveConfirm:boolean,  isThereKosherFood:boolean){
+    super(wight,hight,kg,price);
+    this.name=name;
+    this.city=city;
+    this.numberEmpoliyes=numberEmpoliyes;
+    this.isHaveConfirm=isHaveConfirm;
+    this.isThereKosherFood=isThereKosherFood;
+  }
+  printTheDetails(){
+    return `Details:${this.getDetails()}Name:${this.name}City:${this.city}Number of Empoliyes${this.numberEmpoliyes}Confirm:${this.isHaveConfirm}Is Have a Kosher Meels?${this.isThereKosherFood}`;
+  }
+
+  returnIfHaveOtomation(){
+    return this.getIsHaveInvations ? `Has Otomation + ${this.numberEmpoliyes}` : "No otomation"; 
+  }
+
+}
+
 
 
 
