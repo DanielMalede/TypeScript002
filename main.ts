@@ -74,10 +74,24 @@ printTheTextNumTimesAsArgument("king lior",5);
 }
 
 27.
-function getNumberAndSort(...caractors:string=[]):void{
-
+function getSortByAlphabet(...charctorsArray: string[]): string[] {
+  return charctorsArray ? charctorsArray.sort() : [];
 }
-getNumberAndSort()
+console.log(getSortByAlphabet("A","H","J","E","D"));
+
+28.
+
+function getSortByNumbers(...charctorArray:number[]):number[]{
+  return charctorArray ? charctorArray.sort((a:number,b:number)=> a-b) : []
+}
+console.log(getSortByNumbers(34,5,12,33,2,7));
+
+29.
+function getSortArrayNumFromTheBigToSmall(...someCarcArr:number[]):number[]{
+  return someCarcArr ? someCarcArr.sort((a:number,b:number)=>b-a) : []
+}
+console.log(getSortArrayNumFromTheBigToSmall(33,6,78,9,367,77));
+
 
 
 function calac(num1?:number,):number{
