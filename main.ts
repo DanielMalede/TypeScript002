@@ -40,7 +40,7 @@ printToLog("lior dawit");
 23.
 
 function getNamesAndPrint(ageCat:number,typeCat:string,catName?:string):void{
-  catName ? console.log(catName + ageCat + typeCat : console.log(ageCat+typeCat))
+  catName ? console.log(catName + ageCat + typeCat ) : console.log(ageCat+typeCat);
 }
 getNamesAndPrint( 12," street");
 
@@ -147,7 +147,7 @@ class Car {
   }
 }
 35.
-class Elepant {
+class Elephant {
   hight: number;
   kindOf: string;
   age: number;
@@ -313,8 +313,8 @@ class Room{
   }
 }
 
-let show11 = new Room(10,20,200)
-let show22 = new Room(180,200,36000)
+let show11:Room = new Room(10,20,200)
+let show22:Room = new Room(180,200,36000)
 console.log(Room.returnTheBiggestRoom("small",show11,show22))
 
 42.
@@ -387,10 +387,10 @@ class Salon extends Room{
 
    static returnExpansiveOrChip(expensiveOrChip:string="expansive",...prodoctObj:Product[]){
      if(expensiveOrChip === "expansive"){
-       prodoctObj.sort((a:Product,b:Product)=> b.price - a.price)[0]
+       prodoctObj.sort((a:Product,b:Product)=> b.price - a.price)[0];
      }
      else if(expensiveOrChip === "chip"){
-       prodoctObj.sort((a:Product,b:Product)=>b.price - a.price)[0]
+       prodoctObj.sort((a:Product,b:Product)=>b.price - a.price)[0];
      }
    }
  }
@@ -451,10 +451,10 @@ class Factory{
     return `Details:Name:${this.name}City:${this.city}Number-Empoliyes:${this.numberEmpoliyes}Is Have Confirmation:${this.isHaveConfirmation}`;
   }
   get getIsHaveOtomation():boolean{
-    return this.isHaveOtomation
+    return this.isHaveOtomation;
   }
   set setIsHaveOtomation(someBoolean:boolean){
-    this.isHaveOtomation = someBoolean
+    this.isHaveOtomation = someBoolean;
   }
 
   static returnWhereHadMaxOfEmpoliyes(moreOrLess:string="going up",...factoryObj:Factory[]){
@@ -476,22 +476,22 @@ let somer3:Factory = new Factory("some3","kiryat-malachi",10,false);
 class Warehouse extends Factory{
   numberOfTelevition:number;
   constructor(name:string,city:string,numberEmpoliyes:number,isHaveConfirmation:boolean,numberOfTelevition:number){
-    super(name,city,numberEmpoliyes,isHaveConfirmation)
+    super(name,city,numberEmpoliyes,isHaveConfirmation);
     this.numberOfTelevition=numberOfTelevition;
   }
   printTheDetails(){
-    return `Details:${this.printDetails()} Number Of Televition:${this.numberOfTelevition}`
+    return `Details:${this.printDetails()} Number Of Televition:${this.numberOfTelevition}`;
   }
 
   getConfirmMessege(){
-    return this.getIsHaveOtomation ? "Approved" : "An application has been submitted"ף
+    return this.getIsHaveOtomation ? "Approved" : "An application has been submitted";
   }
 }
 
-let b123:Warehouse = new Warehouse("amit","kiryat-malachi",53,false,7)
-let b124:Warehouse = new Warehouse("amal","kiryat-malachi",48,true,4)
-let b125:Warehouse = new Warehouse("school1","beer-sheva",43,true,11)
-let b126:Warehouse = new Warehouse("eilat23","Tel-aviv",60,true,67)
+let b123:Warehouse = new Warehouse("amit","kiryat-malachi",53,false,7);
+let b124:Warehouse = new Warehouse("amal","kiryat-malachi",48,true,4);
+let b125:Warehouse = new Warehouse("school1","beer-sheva",43,true,11);
+let b126:Warehouse = new Warehouse("eilat23","Tel-aviv",60,true,67);
 console.log(Warehouse.returnWhereHadMaxOfEmpoliyes("goingdown",b123,b124,b125,b126));
 
 49.
@@ -523,9 +523,10 @@ class Sandwich extends Product{
 
 
 
-const show1 = new User("elada barahano",23,"eldadQewr");
-const show2 = new User("lior dawit",26,"liorQewr");
+const show1:User = new User("elada barahano",23,"eldadQewr");
+const show2:User = new User("lior dawit",26,"liorQewr");
 show1
+//מגדירים משתנה סטטי ונעשה לו השמה ל-0 
 class Dog {
   static numberOfObjects: number = 0;
   constructor() {
